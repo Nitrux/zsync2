@@ -8,6 +8,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	 git \
 	 cmake \
+	 checkinstall \
 	 g++
 
 ### Install Package Build Dependencies #2
