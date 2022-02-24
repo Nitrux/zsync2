@@ -41,6 +41,7 @@ cmake \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
 	-DUSE_SYSTEM_CURL=1 \
+	-DBUILD_CPR_TESTS=0 \
 	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
 
 make -j$(nproc)
