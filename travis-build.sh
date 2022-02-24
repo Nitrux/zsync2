@@ -28,7 +28,7 @@ rm -rf zsync2/{COPYING,README.md,ci}
 
 ### Compile Source
 
-mkdir -p zsync2/build && cd zsync/build
+mkdir -p zsync2/build && cd zsync2/build
 
 cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
