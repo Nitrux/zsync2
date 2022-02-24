@@ -24,7 +24,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
 git submodule update --init
 
-rm -rf zsync2/{COPYING,README.md,ci}
+rm -rf zsync2/{COPYING,README.md,ci,}
 
 ### Compile Source
 
@@ -41,9 +41,9 @@ cmake \
 	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
-	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu .. \
 	-DUSE_SYSTEM_CURL=1 \
-	-DBUILD_CPR_TESTS=0
+	-DBUILD_CPR_TESTS=0 \
+	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
 
 make -j$(nproc)
 
