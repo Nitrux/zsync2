@@ -24,7 +24,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
 git submodule update --init
 
-rm -rf zsync2/{COPYING,README.md,ci,}
+rm -rf zsync2/{COPYING,README.md,ci}
 
 ### Compile Source
 
