@@ -23,7 +23,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
 git clone --single-branch --branch master https://github.com/libcpr/cpr.git
-git clone --single-branch --branch master https://github.com/google/googletest.git
+git clone --single-branch --branch main https://github.com/google/googletest.git
 git clone --single-branch --branch master https://github.com/Taywee/args.git
 
 cp -r cpr/* zsync2/lib/cpr/
