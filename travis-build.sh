@@ -22,7 +22,9 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 ### Clone repo.
 
 git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
-git submodule update --init
+git clone --single-branch --branch master https://github.com/libcpr/cpr.git
+
+cp -r cpr/* zsync2/lib/cpr/
 
 rm -rf zsync2/{COPYING,README.md,ci}
 
