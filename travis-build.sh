@@ -23,6 +23,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
 git clone --single-branch --branch master https://github.com/libcpr/cpr.git
+git clone --single-branch --branch master https://github.com/google/googletest.git
 git clone --single-branch --branch master https://github.com/Taywee/args.git
 
 cp -r cpr/* zsync2/lib/cpr/
@@ -51,6 +52,8 @@ cmake \
 	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
 
 make -j$(nproc)
+
+ls -l
 
 ### Run checkinstall and Build Debian Package
 ### DO NOT USE debuild, screw it
