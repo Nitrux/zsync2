@@ -17,7 +17,8 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libssl-dev \
 	libssh2-1-dev \
 	libcurl4-gnutls-dev \
-	zlib1g-dev
+	zlib1g-dev \
+	libc6-dev
 
 ### Clone repo.
 
@@ -39,16 +40,12 @@ mkdir -p zsync2/build && cd zsync2/build
 
 cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
-	-DENABLE_BSYMBOLICFUNCTIONS=OFF \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DCMAKE_INSTALL_SYSCONFDIR=/etc \
 	-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
-	-DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
-	-DUSE_SYSTEM_CURL=1 \
-	-DBUILD_CPR_TESTS=0 \
 	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
 
 make -j$(nproc)
