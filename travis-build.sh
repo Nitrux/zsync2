@@ -16,7 +16,6 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libssl-dev \
 	libssh2-1-dev \
-	libcurl4-gnutls-dev \
 	zlib1g-dev \
 	libcurl4-nss-dev
 
