@@ -18,8 +18,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libssh2-1-dev \
 	libcurl4-gnutls-dev \
 	zlib1g-dev \
-	libc6-dev \
-	libboost-all-dev
+	libcurl4-nss-dev
 
 ### Clone repo.
 
@@ -47,6 +46,7 @@ cmake \
 	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
+	-DCMAKE_HAVE_LIBC_PTHREAD \
 	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
 
 make -j$(nproc)
