@@ -8,6 +8,7 @@ wget -qO /etc/apt/sources.list.d/ubuntu-jammy-repo.list https://raw.githubuserco
 
 DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -yy dist-upgrade
+DEBIAN_FRONTEND=noninteractive apt -yy autoremove
 
 ### Install Build Tools #1
 
@@ -24,7 +25,8 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libssl-dev \
 	libssh2-1-dev \
 	zlib1g-dev \
-	libcurl4-nss-dev
+	libcurl4-nss-dev \
+	libgcrypt20-dev
 
 ### Clone repo.
 
