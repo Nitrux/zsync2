@@ -18,7 +18,8 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libssh2-1-dev \
 	libcurl4-gnutls-dev \
 	zlib1g-dev \
-	libc6-dev
+	libc6-dev \
+	libboost-all-dev
 
 ### Clone repo.
 
