@@ -12,7 +12,6 @@ DEBIAN_FRONTEND=noninteractive apt -yy autoremove
 
 ### Install Build Tools #1
 
-DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	 git \
 	 cmake \
@@ -60,6 +59,8 @@ make -j$(nproc)
 
 ls -l
 
+cat cmake_install.cmake
+
 ### Run checkinstall and Build Debian Package
 ### DO NOT USE debuild, screw it
 
@@ -80,12 +81,12 @@ checkinstall -D -y \
 	--pkgarch=amd64 \
 	--pkgrelease="1" \
 	--pkglicense=LGPL-3 \
-	--pkggroup=utils \
+	--pkggroup=libs \
 	--pkgsource=zsync2 \
 	--pakdir=../.. \
 	--maintainer=uri_herrera@nxos.org \
 	--provides=zsync2 \
-	--requires="libssl1.1,libssh2-1,libcurl3-gnutls,zlib1g" \
+	--requires="libssl1.1,libssh2-1,libcurl3-nss,libgcrypt20,zlib1g" \
 	--nodoc \
 	--strip=no \
 	--stripso=yes \
