@@ -57,9 +57,7 @@ cmake \
 
 make -j$(nproc)
 
-ls -l
-
-cat cmake_install.cmake
+mkdir -p /lib/x86_64-linux-gnu/cmake/zsync2
 
 ### Run checkinstall and Build Debian Package
 ### DO NOT USE debuild, screw it
