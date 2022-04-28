@@ -57,7 +57,7 @@ cmake \
 
 make -j$(nproc)
 
-mkdir -p /lib/x86_64-linux-gnu/cmake/zsync2
+mkdir -p /usr/lib/x86_64-linux-gnu/cmake/zsync2
 
 ### Run checkinstall and Build Debian Package
 ### DO NOT USE debuild, screw it
@@ -84,7 +84,7 @@ checkinstall -D -y \
 	--pakdir=../.. \
 	--maintainer=uri_herrera@nxos.org \
 	--provides=zsync2 \
-	--requires="libssl1.1,libssh2-1,libcurl3-nss,libgcrypt20,zlib1g" \
+	--requires="libssl1.1,libssl3,libssh2-1,libcurl3-nss,libgcrypt20,zlib1g" \
 	--nodoc \
 	--strip=no \
 	--stripso=yes \
