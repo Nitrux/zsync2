@@ -4,11 +4,7 @@ set -x
 
 ### Update Sources
 
-wget -qO /etc/apt/sources.list.d/ubuntu-jammy-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.jammy
-
 DEBIAN_FRONTEND=noninteractive apt -qq update
-DEBIAN_FRONTEND=noninteractive apt -yy dist-upgrade
-DEBIAN_FRONTEND=noninteractive apt -yy autoremove
 
 ### Install Build Tools #1
 
