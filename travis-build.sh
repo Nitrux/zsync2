@@ -31,6 +31,14 @@ curl -L https://packagecloud.io/nitrux/testing/gpgkey | apt-key add -;
 
 DEBIAN_FRONTEND=noninteractive apt -qq update
 
+#	Upgrade dpkg for zstd support.
+
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
+	dpkg=1.20.9ubuntu2 \
+	libc-bin=2.33-0ubuntu5 \
+	libc6=2.33-0ubuntu5 \
+	locales=2.33-0ubuntu5
+
 ### Upgrade Glib
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
