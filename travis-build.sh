@@ -14,6 +14,9 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	cmake \
 	checkinstall \
 	gnupg2 \
+	automake \
+	libtool \
+	wget \
 	g++
 
 ### Update sources
