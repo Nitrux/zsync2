@@ -2,7 +2,7 @@
 
 set -x
 
-### Update Sources
+### Update ources
 
 DEBIAN_FRONTEND=noninteractive apt -qq update
 
