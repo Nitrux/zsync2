@@ -2,7 +2,11 @@
 
 set -x
 
-### Update ources
+### Update sources
+
+wget -qO /etc/apt/sources.list.d/nitrux-testing-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux.testing
+
+curl -L https://packagecloud.io/nitrux/testing/gpgkey | apt-key add -;
 
 DEBIAN_FRONTEND=noninteractive apt -qq update
 
@@ -12,6 +16,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	ca-certificates \
 	pkg-config \
 	curl \
+	python3-dev \
 	git \
 	cmake \
 	checkinstall \
