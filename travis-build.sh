@@ -2,16 +2,9 @@
 
 set -x
 
-### Update sources
-
-wget -qO /etc/apt/sources.list.d/nitrux-testing-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux.testing
-
-curl -L https://packagecloud.io/nitrux/testing/gpgkey | apt-key add -;
-
-DEBIAN_FRONTEND=noninteractive apt -qq update
-
 ### Install Build Tools #1
 
+DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	ca-certificates \
 	pkg-config \
@@ -20,7 +13,21 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	git \
 	cmake \
 	checkinstall \
+	gnupg2 \
 	g++
+
+### Update sources
+
+wget -qO /etc/apt/sources.list.d/nitrux-testing-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux.testing
+
+curl -L https://packagecloud.io/nitrux/testing/gpgkey | apt-key add -;
+
+DEBIAN_FRONTEND=noninteractive apt -qq update
+
+### Upgrade Glib
+
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
+	libc6
 
 ### Install Package Build Dependencies #2
 
