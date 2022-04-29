@@ -7,9 +7,9 @@ set -xe
 DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	ca-certificates \
-	wget \
 	curl \
-	gnupg2
+	gnupg2 \
+	wget
 
 ### Update sources
 
@@ -39,23 +39,23 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
 ### Install Package Build Dependencies #1
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	pkg-config \
-	python3-dev \
-	git \
-	cmake \
-	checkinstall \
 	automake \
+	checkinstall \
+	cmake \
+	g++ \
+	git \
 	libtool \
-	g++
+	pkg-config \
+	python3-dev
 
 ### Install Package Build Dependencies #2
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	libssl-dev \
-	libssh2-1-dev \
-	zlib1g-dev \
 	libcurl4-nss-dev \
-	libgcrypt20-dev
+	libgcrypt20-dev \
+	libssh2-1-dev \
+	libssl-dev \
+	zlib1g-dev
 
 ### Clone repo.
 
