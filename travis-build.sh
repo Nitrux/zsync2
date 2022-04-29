@@ -8,6 +8,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	ca-certificates \
 	wget \
+	curl \
 	gnupg2
 
 ### Update sources
@@ -37,10 +38,8 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
 
 ### Install Package Build Dependencies #1
 
-DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	pkg-config \
-	curl \
 	python3-dev \
 	git \
 	cmake \
