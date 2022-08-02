@@ -1,4 +1,4 @@
-# zsync2 [![Build Status](https://app.travis-ci.com/Nitrux/zsync2.svg?branch=main)](https://app.travis-ci.com/Nitrux/zsync2)
+# zsync2
 
 A rewrite of the advanced file download/sync tool zsync.
 
