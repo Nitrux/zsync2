@@ -19,5 +19,5 @@ $APT_COMMAND install -qy --no-install-recommends \
     libssl-dev \
     libtool \
     pkg-config \
-    python3-dev
+    python3-dev \
     zlib1g-dev
