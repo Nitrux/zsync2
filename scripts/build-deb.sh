@@ -56,7 +56,7 @@ checkinstall -D -y \
 	--pkglicense=LGPL-3 \
 	--pkggroup=libs \
 	--pkgsource=zsync2 \
-	--pakdir=../.. \
+	--pakdir=../ \
 	--maintainer=uri_herrera@nxos.org \
 	--provides=zsync2 \
 	--requires="libssl1.1,libssl3,libssh2-1,libcurl3-nss,libgcrypt20,zlib1g" \
