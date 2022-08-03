@@ -4,14 +4,15 @@ set -x
 
 ### Download Source
 
-git clone --single-branch --branch $ZSYNC2_BRANCH https://github.com/AppImage/AppImageUpdate.git
-git clone --single-branch --branch master https://github.com/libcpr/cpr.git
-git clone --single-branch --branch main https://github.com/google/googletest.git
-git clone --single-branch --branch master https://github.com/Taywee/args.git
+git clone --recursive --single-branch --branch $ZSYNC2_BRANCH https://github.com/AppImage/zsync2.git
+# git submodule foreach git pull
+# git clone --single-branch --branch master https://github.com/libcpr/cpr.git
+# git clone --single-branch --branch main https://github.com/google/googletest.git
+# git clone --single-branch --branch master https://github.com/Taywee/args.git
 
-cp -r cpr/* zsync2/lib/cpr/
-cp -r googletest/* zsync2/lib/gtest/
-cp -r args/* zsync2/lib/args/
+# cp -r cpr/* zsync2/lib/cpr/
+# cp -r googletest/* zsync2/lib/gtest/
+# cp -r args/* zsync2/lib/args/
 
 rm -rf \
 	zsync2/{COPYING,README.md,ci}
