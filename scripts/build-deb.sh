@@ -38,6 +38,8 @@ make -j$(nproc)
 
 mkdir -p /usr/lib/x86_64-linux-gnu/cmake/zsync2
 
+make install
+
 ### Run checkinstall and Build Debian Package
 
 >> description-pak printf "%s\n" \
